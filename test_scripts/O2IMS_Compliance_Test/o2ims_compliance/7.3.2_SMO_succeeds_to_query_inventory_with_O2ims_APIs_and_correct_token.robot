@@ -125,7 +125,7 @@ s5, query Resource Type detail
     log      ${res}   level=DEBUG
     Integer     response status    200
     Object       response body
-    String   $.alarmDictionary.managementInterfaceId    "O2IMS"
+    Array   $.alarmDictionary.managementInterfaceId    ["O2IMS"]
 
 s6, query Resource Pool list without filter
     [documentation]  This test case verifies Query OCloud resourcePools without filter
@@ -272,7 +272,7 @@ s12, query Resource list of a Resource Pool with selector
     END
 
 s13, query Resource detail
-    [documentation]  This test case verifies Query OCloud Resource Detail of ${RESOURCETYPE_NAME} 
+    [documentation]  This test case verifies Query OCloud Resource Detail of ${RESOURCETYPE_NAME}
     [tags]  ORAN_Compliance     ORAN_O2     ORAN_O2IMS    ORAN_O2IMS_Inventory
     Clear Expectations
     GET   ${ORAN_O2IMS_ENDPOINT}/o2ims-infrastructureInventory/v1/resourceTypes?filter=(eq,name,${RESOURCETYPE_NAME})
