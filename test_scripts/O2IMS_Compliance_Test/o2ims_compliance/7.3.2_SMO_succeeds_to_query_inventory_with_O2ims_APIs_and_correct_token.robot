@@ -34,7 +34,7 @@ s1, query o-cloud detail
     log      ${res}   level=DEBUG
     Integer  response status    200
     # Object   response body
-    String   $.globalcloudId    ${GLOBAL_OCLOUD_ID1}
+    String   $.globalCloudId    ${GLOBAL_OCLOUD_ID1}
     # Sometimes serviceUri might not contain the port number in the json response if it is a well-known port.
     IF      ${ORAN_SERVICE_NODE_PORT} == 443 or ${ORAN_SERVICE_NODE_PORT} == 80
         String   $.serviceUri    ${ORAN_O2IMS_ENDPOINT}  ${ORAN_O2IMS_ENDPOINT_DEFAULT_PORT}
